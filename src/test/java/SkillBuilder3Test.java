@@ -68,7 +68,7 @@ class SkillBuilder3Test {
         long[] number = {4, 14, 27, 38, 55, 89, 3045};
         long[] expected = {3, 10, 13, 22, 17, 1, 2715};
         for (int i = 0; i < number.length; i++) {
-            long actual = SkillBuilder3.sumOfDivisors(number[i]);
+            long actual = SkillBuilder3.sumOfDivisorsUsingWhile(number[i]);
             assertEquals(expected[i], actual, "Expecting: " + expected[i] + "\nActual:" + actual);
         }
     }

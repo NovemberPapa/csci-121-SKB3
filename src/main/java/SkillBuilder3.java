@@ -5,13 +5,13 @@
  * @author <You>
  * @version 1.0
  */
-import java.util.Scanner;
+
 public class SkillBuilder3
 {
     //remove this before submitting!!!!
     public static void main(String[] args){
-        Scanner scnr = new Scanner(System.in);
-        System.out.print(repeat(scnr.next(), scnr.nextInt()));
+        //long num = (long)
+        //System.out.println(sumOfDivisorsUsingWhile(args[0]));
 
     }
     public static String repeat(String s, int numOfTimesToRepeat)
@@ -69,11 +69,18 @@ public class SkillBuilder3
     }
 
     public static boolean isPerfect(long number){
-        return false;
+        return sumOfDivisors(number) == number;
     }
 
     public static long sumOfDivisorsUsingWhile(long number){
         long sum = 0;
+        int count = 1;
+        while (count < number){
+            if (number % count == 0){
+                sum += count;
+            }
+            count += 1;
+        }
         // TODO: replace this line with your code
         return sum;
     }
