@@ -5,18 +5,31 @@
  * @author <You>
  * @version 1.0
  */
-
+import java.util.Scanner;
 public class SkillBuilder3
 {
-    private static String repeat(String s, int numOfTimesToRepeat)
+    //remove this before submitting!!!!
+    public static void main(String[] args){
+        Scanner scnr = new Scanner(System.in);
+        System.out.print(repeat(scnr.next(), scnr.nextInt()));
+
+    }
+    public static String repeat(String s, int numOfTimesToRepeat)
     {
         String result = "";
         // TODO: replace this line with your code
+
+        for (int count = 0; count != numOfTimesToRepeat; count += 1){
+            result = result + s;
+        }
         return result;
     }
     public static String leftRightTriangle(int height)
     {
         String str = "";
+        for (int count = 1; count <= height; count += 1){
+            str = str + repeat("*", count) + "\n";
+        }
         // TODO: replace this line with your code
         return str;
     }
@@ -25,18 +38,32 @@ public class SkillBuilder3
     {
         String str = "";
         // TODO: replace this line with your code
+        for (int count = 1; count <= height; count += 1){
+            str = str + repeat(" ", (height-count)) + repeat("*", count) + "\n";
+        }
         return str;
     }
 
     public static String circle(int radius)
     {
         String str = "";
+        for (int count = 1; count <= (2*radius -1); count += 1){
+            int x = (int) Math.sqrt(radius*radius - Math.pow(Math.abs(radius - count), 2));
+            str = str + repeat(" ", (radius - x)) + repeat("*", 2*x)
+                    +  "\n";
+            //repeat(" ", (radius - x)) +
+        }
         // TODO: replace this line with your code
         return str;
     }
 
     public static long sumOfDivisors(long number) {
         long sum = 0;
+        for (int count = 1; count < number;count += 1){
+            if (number % count == 0){
+                sum += count;
+            }
+        }
         // TODO: replace this line with your code
         return sum;
     }
